@@ -1,0 +1,35 @@
+comandos para teste atividade 4
+
+PILHA/STACK
+# 1. Adicionar item
+Invoke-RestMethod -Uri "http://localhost:3000/api/pilha" -Method Post -ContentType "application/json" -Body '{"item": "Prato A"}'
+
+# 2. Ver o topo (Peek)
+curl.exe http://localhost:3000/api/pilha/topo
+
+# 3. Remover do topo (Pop)
+curl.exe -X DELETE http://localhost:3000/api/pilha
+
+
+FILHA(QUEUE)
+# 1. Adicionar item
+Invoke-RestMethod -Uri "http://localhost:3000/api/fila" -Method Post -ContentType "application/json" -Body '{"item": "Cliente 1"}'
+
+# 2. Ver o primeiro da fila
+curl.exe http://localhost:3000/api/fila/inicio
+
+# 3. Remover o primeiro (Shift)
+curl.exe -X DELETE http://localhost:3000/api/fila
+
+LISTA/LIST
+# 1. Adicionar item
+Invoke-RestMethod -Uri "http://localhost:3000/api/lista" -Method Post -ContentType "application/json" -Body '{"item": "Elemento X"}'
+
+# 2. Buscar item em índice específico (Ex: índice 0)
+curl.exe http://localhost:3000/api/lista/0
+
+# 3. Listar estrutura completa
+curl.exe http://localhost:3000/api/lista
+
+
+Se o professor perguntar sobre o Polimorfismo, você pode explicar que todas as rotas chamam o método .remove(), mas a Pilha remove do final (pop), a Fila remove do início (shift) e a Lista pode remover de qualquer lugar (splice).
